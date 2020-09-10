@@ -1,0 +1,72 @@
+.spacer {
+  height: 100vh;
+  background: #8cbb8c;
+}
+
+.container {
+  background: #ecb2b2;
+  position: relative;
+}
+
+.cards {
+  height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  height: 600px;
+  width: 100%;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  transition: transform 0.6s cubic-bezier(.8,.2,.1,0.8) 0.1s;
+}
+
+.card:nth-child(1) {
+  background: red;
+}
+.card:nth-child(2) {
+  background: green;
+}
+.card:nth-child(3) {
+  background: blue;
+}
+.card:nth-child(4) {
+  background: orange;
+}
+.card:nth-child(5) {
+  background: purple;
+}
+
+.stackydack .cards {
+  position: sticky;
+  top: 0;
+}
+  
+.stackydack .card {
+  position: absolute;
+  top: 50%;
+}
+
+.card--out {
+  animation: card-out 0.6s cubic-bezier(.8,.2,.1,0.8);
+}
+
+.card--in {
+  animation: card-in 0.6s cubic-bezier(.8,.2,.1,0.8);
+}
+
+@keyframes card-in {
+  0% { z-index: 0 }
+  50% { transform: translateY(-160%) rotate(-5deg) translateX(-40px); }
+  80% { z-index: 20; }
+  100% {  }
+}
+
+@keyframes card-out {
+  0% { z-index: 20; transform: translateY(-50%) scale(1);}
+  50% { transform: translateY(-160%) rotate(-5deg) translateX(-40px); }
+  80% { z-index: 1; }
+  100% {  }
+}
