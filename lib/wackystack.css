@@ -1,0 +1,39 @@
+.wackystack {
+  position: relative;
+}
+
+.wackystack__cards {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.wackystack__card {
+  transition: transform 0.6s cubic-bezier(.8,.2,.1,0.8) 0.1s;
+  position: absolute !important;
+  top: 50%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wackystack__card--out {
+  animation: wackystack-card-out 0.6s cubic-bezier(.8,.2,.1,0.8);
+}
+
+.wackystack__card--in {
+  animation: wackystack-card-in 0.6s cubic-bezier(.8,.2,.1,0.8);
+}
+
+@keyframes wackystack-card-in {
+  0% { z-index: 0 }
+  50% { transform: translateY(-160%) rotate(-5deg) translateX(-40px); }
+  80% { z-index: 20; }
+  100% {  }
+}
+
+@keyframes wackystack-card-out {
+  0% { z-index: 20; transform: translateY(-50%) scale(1);}
+  50% { transform: translateY(-160%) rotate(-5deg) translateX(-40px); }
+  80% { z-index: 1; }
+  100% {  }
+}
